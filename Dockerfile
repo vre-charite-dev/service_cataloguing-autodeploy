@@ -18,10 +18,7 @@
 # permissions and limitations under the Licence.
 # 
 
-FROM python:3.7-buster
-
-ARG PIP_USERNAME
-ARG PIP_PASSWORD
+FROM python:3.8
 
 WORKDIR /usr/src/app
 
@@ -32,6 +29,6 @@ apt-get install -y vim-tiny less && ln -s /usr/bin/vim.tiny /usr/bin/vim && rm -
 
 COPY . .
 
-RUN PIP_USERNAME=$PIP_USERNAME PIP_PASSWORD=$PIP_PASSWORD pip install --no-cache-dir -r requirements.txt -r internal_requirements.txt && chmod +x gunicorn_starter.sh
+RUN pip install --no-cache-dir -r requirements.txt && chmod +x gunicorn_starter.sh
 
 CMD ["./gunicorn_starter.sh"]

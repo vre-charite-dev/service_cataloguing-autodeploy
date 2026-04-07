@@ -53,3 +53,4 @@ opentelemetry-instrumentation==0.26b1
 opentelemetry-instrumentation-flask==0.26b1
 opentelemetry-instrumentation-requests==0.26b1
 opentelemetry-instrumentation-logging==0.26b1
+git+https://github.com/vre-charite-autodeploy/service_common.git@main
